@@ -16,6 +16,7 @@
         <title>{{ config('app.name') }}</title>
 
         <link rel="icon" href="{{ asset('GitHub-Mark.png') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
         {{--  --}}
