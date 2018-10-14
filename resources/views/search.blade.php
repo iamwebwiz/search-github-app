@@ -30,5 +30,17 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container" style="padding-top: 50px">
+
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <input type="text" name="q" placeholder="Input topic to search" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        </div>
     </body>
 </html>
