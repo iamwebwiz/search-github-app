@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\Request;
 
-class GithubController extends Controller
+class GitHubController extends Controller
 {
     protected $guzzleclient;
 
