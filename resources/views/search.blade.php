@@ -19,6 +19,16 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        {{--  --}}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a href="" class="navbar-brand">{{ config('app.name') }}</a>
+
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">Topics</a>
+                    <a href="#" class="nav-item nav-link">Repositories</a>
+                </div>
+            </div>
+        </nav>
     </body>
 </html>
