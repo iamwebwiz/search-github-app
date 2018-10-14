@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\Request;
 
