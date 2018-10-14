@@ -22,5 +22,20 @@ class GithubController extends Controller
         return view('search');
     }
 
-    //
+    public function searchTopics(Requesr $request)
+    {
+        $this->validate($request, ['q' => 'required|string']);
+
+        try {
+            $repositories = $this->guzzleclient->get("{$this->base_url}/search/topics");
+
+            return back()->with([
+                'repos' => $repositories
+            ]);
+        } catch (Exception $e) {
+            return back()->with([
+                'error' => 'Unable to fetch repositories having that topic. Please try again.'
+            ]);
+        }
+    }
 }
