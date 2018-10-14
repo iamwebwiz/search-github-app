@@ -28,7 +28,7 @@ class GithubController extends Controller
         $this->validate($request, ['q' => 'required|string']);
 
         try {
-            $repositories = $this->guzzleclient->get("{$this->base_url}/search/topics");
+            $repositories = $this->guzzleclient->request('POST',"{$this->base_url}/search/topics");
 
             return back()->with([
                 'repos' => $repositories
