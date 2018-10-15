@@ -31,7 +31,10 @@
 
         <div class="container" style="padding-top: 50px">
 
-            {{--  --}}
+            <form action="" class="form-inline">
+                <input type="text" name="username" placeholder="Enter username" class="form-control">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
 
         </div>
     </body>

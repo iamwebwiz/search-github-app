@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\Request;
 
 class GithubController extends Controller
 {
-    protected $guzzleclient;
+    protected $client;
 
     protected $base_url;
 
     public function __construct()
     {
-        $this->guzzleclient = new GuzzleClient();
+        $this->client = new GuzzleClient();
         $this->base_url = config('github.base_url');
     }
 
