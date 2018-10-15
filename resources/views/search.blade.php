@@ -31,10 +31,36 @@
 
         <div class="container" style="padding-top: 50px">
 
-            <form action="" class="form-inline">
-                <input type="text" name="username" placeholder="Enter username" class="form-control">
+            <form action="{{ url('/search/users') }}" class="form-inline" method="post">
+                @csrf
+                <input type="text" name="username" autofocus placeholder="Enter username" class="form-control">
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
+
+            @if (session('users'))
+                <div class="row" style="margin-top: 50px;">
+                    <div class="col-lg-12"><h2>Search Results</h2></div>
+
+                    @forelse (session('users')['items'] as $user)
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 30px;">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="{{ $user['avatar_url'] }}" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="{{ $user['html_url'] }}">
+                                            {{ '@'.$user['login'] }}
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-lg-12">
+                            <h3 class="text-center text-primary">No result to display</h3>
+                        </div>
+                    @endforelse
+                </div>
+            @endif
 
         </div>
     </body>

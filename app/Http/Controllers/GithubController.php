@@ -21,4 +21,14 @@ class GithubController extends Controller
     {
         return view('search');
     }
+
+    public function search(Request $request)
+    {
+        $response = $this->client->get("{$this->base_url}/search/users?q={$request->username}");
+        $users = json_decode($response->getBody(), true);
+
+        return redirect()->back()->with([
+            'users' => $users
+        ]);
+    }
 }
