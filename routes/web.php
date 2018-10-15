@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', 'GitHubController@index');
-
-Route::post('/search/topics', 'GitHubController@searchTopics');
+Route::get('/', 'GithubController@index');
