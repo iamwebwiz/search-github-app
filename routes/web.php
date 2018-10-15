@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'GithubController@index');
+
+Route::post('/search/users', 'GithubController@search');
