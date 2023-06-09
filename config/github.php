@@ -2,6 +2,6 @@
 
 return [
 
-    'base_url' => getenv('GITHUB_BASE_URL'),
+    'base_url' => env('GITHUB_BASE_URL', 'https://api.github.com'),
 
 ];
