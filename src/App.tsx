@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import ErrorMessage from "./components/ErrorMessage";
 import UserCard from "./components/UserCard";
 import { ISearchResultState, User } from "./types";
+import Loading from "./components/Loading";
 
 export default function App() {
   const [username, setUsername] = useState<string>("");
@@ -66,9 +67,7 @@ export default function App() {
           )}
         </>
       ) : (
-        <div className="flex justify-center sm:justify-start">
-          <span className="loading loading-dots loading-lg"></span>
-        </div>
+        <Loading />
       )}
     </div>
   );
