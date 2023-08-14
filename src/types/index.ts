@@ -1,6 +1,5 @@
 export type SearchResultType = {
   query: string;
-  runCount: number;
   user: UserType;
 };
 

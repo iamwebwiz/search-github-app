@@ -10,9 +10,9 @@ export default function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [searchResult, setSearchResult] = useState<SearchResultType>({
     query: "",
-    runCount: 0,
     user: {},
   });
+  const [runCount, setRunCount] = useState<number>(0);
 
   async function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -25,10 +25,10 @@ export default function App() {
       return {
         ...prev,
         query: username,
-        runCount: prev.runCount++,
         user: data,
       };
     });
+    setRunCount((prev) => ++prev);
     setLoading(false);
   }
 
@@ -54,7 +54,7 @@ export default function App() {
 
       {!loading ? (
         <>
-          {!!searchResult.runCount && (
+          {!!runCount && (
             <>
               <div className="divider mb-5">
                 <h1 className="text-center text-3xl">Search Result</h1>
