@@ -1,13 +1,14 @@
 import { FormEvent, useState } from "react";
 import ErrorMessage from "./components/ErrorMessage";
 import UserCard from "./components/UserCard";
-import { ISearchResultState, User } from "./types";
+import { SearchResultType, UserType } from "./types";
 import Loading from "./components/Loading";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [username, setUsername] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [searchResult, setSearchResult] = useState<ISearchResultState>({
+  const [searchResult, setSearchResult] = useState<SearchResultType>({
     query: "",
     runCount: 0,
     user: {},
@@ -18,7 +19,7 @@ export default function App() {
     setLoading(true);
 
     const response = await fetch(`https://api.github.com/users/${username}`);
-    const data: User = await response.json();
+    const data: UserType = await response.json();
 
     setSearchResult((prev) => {
       return {
@@ -69,6 +70,8 @@ export default function App() {
       ) : (
         <Loading />
       )}
+
+      <Footer />
     </div>
   );
 }

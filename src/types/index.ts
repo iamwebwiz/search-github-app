@@ -1,10 +1,10 @@
-export type ISearchResultState = {
+export type SearchResultType = {
   query: string;
   runCount: number;
-  user: User;
+  user: UserType;
 };
 
-export type User = {
+export type UserType = {
   message?: string;
   login?: string;
   id?: number;

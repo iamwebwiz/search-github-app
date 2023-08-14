@@ -1,6 +1,6 @@
-import { User } from "../types";
+import { UserType } from "../types";
 
-export default function UserCard(props: { user: User }) {
+export default function UserCard(props: { user: UserType }) {
   return (
     <div className="card card-compact w-full sm:max-w-xs bg-base-100 shadow-xl mb-3">
       <figure>
